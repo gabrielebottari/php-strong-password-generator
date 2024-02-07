@@ -1,7 +1,7 @@
 <?php
+    session_start();
 
     include __DIR__."/partials/functions.php";
-
 ?>
 
 <!DOCTYPE html>
@@ -24,24 +24,15 @@
             </header>
 
             <main>
-                <form class="row" action="index.php" method="get">
-                    <div class="col-4">
-                        <label class="form-label" for="length">Lunghezza Password:</label>
+                <form class="row justify-content-center" action="index.php" method="get">
+                    <div class="col-5">
+                        <label class="form-label text-primary" for="length">Lunghezza Password:</label>
                         <input class="form-control" type="number" id="length" name="length" min="8" max="32" required>
                     </div>
-                    <div class="col-3 align-self-end">
+                    <div class="col-3 align-self-end text-center">
                         <button class="btn btn-primary" type="submit">Genera Password</button>
                     </div>
                 </form>
-
-                <div class="py-5">
-                    <?php
-                        if ($viewPassword) {
-                            echo '<p>Password Generata: <strong class="text-primary fs-1 px-1">' . htmlspecialchars($generatedPassword) . '</strong></p>';
-                        }
-                    ?>
-                </div>
-
             </main>
 
         </div>
